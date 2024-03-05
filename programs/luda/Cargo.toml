@@ -1,0 +1,77 @@
+[package]
+name = "luda"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2021"
+
+[lib]
+name = "luda"
+path = "src/lib.rs"
+crate-type = ["cdylib", "lib"]
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang = "0.29.0"
+
+[dependencies]
+solana-program = "1.16.3"
+thiserror = "1.0"
+uuid = { version = "0.8", features = ["v4"] }
+chrono = { version = "0.4", features = ["serde"] }
+serde = { version = "1.0.188", features = ["derive"] }
+serde_json = "1.0.107"
+spl-token = "3.4.0"
+borsh = "0.9"
+
+[build-dependencies]
+solana-sdk = "1.16.3"
+
+[dev-dependencies]
+solana-program-test = "1.16.3"
+
+# Modules
+[dependencies.user]
+path = "src/user.rs"
+
+[dependencies.offer]
+path = "src/offer.rs"
+
+[dependencies.request]
+path = "src/request.rs"
+
+[dependencies.shipment]
+path = "src/shipment.rs"
+
+[dependencies.dlu_token]
+path = "src/dlu_token.rs"
+
+[dependencies.dlu_wallet]
+path = "src/dlu_wallet.rs"
+
+[dependencies.escrow]
+path = "src/escrow.rs"
+
+[dependencies.onetimekeys]
+path = "src/onetimekeys.rs"
+
+[dependencies.addressing]
+path = "src/addressing.rs"
+
+[dependencies.processor]
+path = "src/processor.rs"
+
+[dependencies.error]
+path = "src/error.rs"
+
+[features]
+default = []
+
+[package.metadata.solana]
+supported-version = "1.10.1"
+
